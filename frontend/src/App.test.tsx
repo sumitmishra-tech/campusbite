@@ -1,0 +1,2 @@
+import {describe,it,expect} from 'vitest';import {foods} from './data';
+describe('CampusBite sample menu',()=>{it('includes core campus favourites',()=>{const names=foods.map(f=>f.name.toLowerCase()).join(' ');expect(names).toContain('samosa');expect(names).toContain('chai');expect(names).toContain('momos');expect(names).toContain('paneer')});it('has unique ids and positive integer prices',()=>{expect(new Set(foods.map(f=>f.id)).size).toBe(foods.length);foods.forEach(f=>{expect(Number.isInteger(f.price)).toBe(true);expect(f.price).toBeGreaterThan(0)})})});

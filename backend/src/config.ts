@@ -1,0 +1,4 @@
+import dotenv from 'dotenv';import {existsSync} from 'node:fs';import {resolve} from 'node:path';
+const local=resolve(process.cwd(),'.env');const parent=resolve(process.cwd(),'../.env');dotenv.config({path:existsSync(local)?local:parent});
+export const config={port:Number(process.env.PORT||4000),frontendUrl:process.env.FRONTEND_URL||'http://localhost:5173',supabaseUrl:process.env.SUPABASE_URL||'',anonKey:process.env.SUPABASE_ANON_KEY||'',serviceRoleKey:process.env.SUPABASE_SERVICE_ROLE_KEY||'',razorpayKeyId:process.env.RAZORPAY_KEY_ID||'',razorpayKeySecret:process.env.RAZORPAY_KEY_SECRET||'',razorpayWebhookSecret:process.env.RAZORPAY_WEBHOOK_SECRET||'',paymentMode:process.env.PAYMENT_MODE||'simulator',ownerSetupSecret:process.env.OWNER_SETUP_SECRET||''};
+export const hasSupabase=Boolean(config.supabaseUrl&&config.anonKey&&config.serviceRoleKey);export const hasRazorpay=Boolean(config.razorpayKeyId&&config.razorpayKeySecret);

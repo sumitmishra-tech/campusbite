@@ -1,0 +1,2 @@
+export function calculatePayment(totalPaise:number,category:'day_scholar'|'hosteller'){if(!Number.isSafeInteger(totalPaise)||totalPaise<0)throw new Error('Invalid total in paise');const advancePaise=category==='day_scholar'?Math.ceil(totalPaise*0.1):0;return{totalPaise,advancePaise,balancePaise:totalPaise-advancePaise,discountPaise:0}}
+export function toPaise(rupees:number){if(!Number.isFinite(rupees)||rupees<0)throw new Error('Invalid rupee amount');return Math.round(rupees*100)}

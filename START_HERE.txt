@@ -1,0 +1,8 @@
+CampusBite - quick start (Windows PowerShell, in this folder)
+1) npm install
+2) Copy-Item .env.example .env      (then fill in Supabase URL/keys; set OWNER_SETUP_SECRET)
+3) Supabase SQL Editor: run database/migrations/001_initial_schema.sql, then database/seed.sql
+4) npm run dev
+   Frontend: http://localhost:5173   API health: http://localhost:4000/api/health
+Note: frontend config files (vite.config.ts, tsconfig.json, tailwind/postcss/eslint config,
+index.html, frontend/package.json) were recreated because they were not in the upload.
